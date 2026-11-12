@@ -27,7 +27,11 @@ export default defineConfig({
     defaultCommandTimeout: 10000,
     requestTimeout: 10000,
     responseTimeout: 15000,
-    env: { API_URL: process.env.API_URL ?? 'https://dummyjson.com' },
+    env: {
+      API_URL: process.env.API_URL ?? 'https://dummyjson.com',
+      DEMOBLAZE_USERNAME: process.env.DEMOBLAZE_USERNAME ?? '',
+      DEMOBLAZE_PASSWORD: process.env.DEMOBLAZE_PASSWORD ?? '',
+    },
     setupNodeEvents(on) {
       on('task', {
         async 'supabase:crudCheck'() {

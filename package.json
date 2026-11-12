@@ -8,6 +8,7 @@
     "cy:run:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
     "cy:run:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
     "cy:run:db": "cypress run --spec 'cypress/e2e/db/**/*.cy.ts'",
+    "cy:run:login": "cypress run --spec 'cypress/e2e/ui/login.cy.ts'",
     "cypress": "cypress open"
   },
   "keywords": [],

@@ -18,6 +18,7 @@ npm.cmd run cy:run
 npm.cmd run cy:run:ui
 npm.cmd run cy:run:api
 npm.cmd run cy:run:db
+npm.cmd run cy:run:login
 ```
 
 ## Supabase database test
@@ -30,6 +31,10 @@ The database spec performs insert, select, update, and delete against the dedica
 4. Run `npm.cmd run cy:run:db`.
 
 The database suite changes data only in its dedicated test table and removes the generated row after each CRUD check.
+
+## DemoBlaze login test
+
+Set `DEMOBLAZE_USERNAME` and `DEMOBLAZE_PASSWORD` in `.env` to an existing DemoBlaze account, then run `npm.cmd run cy:run:login`. The script opens the login dialog, submits the credentials, captures the `Auth_token` from the login response into a per-test Cypress alias named `authToken`, and verifies the welcome message. It does not create a DemoBlaze account.
 
 ## Layout
 
