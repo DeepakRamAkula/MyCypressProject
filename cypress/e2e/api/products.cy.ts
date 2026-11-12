@@ -10,6 +10,7 @@ interface ProductList {
   total: number;
   skip: number;
   limit: number;
+  
 }
 
 describe('DummyJSON products API', () => {
