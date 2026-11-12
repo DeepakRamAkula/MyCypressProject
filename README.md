@@ -17,7 +17,19 @@ In Cypress, select **E2E Testing** and a browser. To run the tests headlessly:
 npm.cmd run cy:run
 npm.cmd run cy:run:ui
 npm.cmd run cy:run:api
+npm.cmd run cy:run:db
 ```
+
+## Supabase database test
+
+The database spec performs insert, select, update, and delete against the dedicated `public.automation_test_records` table. The Supabase key is used only in Cypress's Node task and is never passed into browser code.
+
+1. Create a Supabase project or start a local Supabase instance.
+2. Apply the SQL in `supabase/migrations/20261112000000_create_automation_test_records.sql` to that database (for a hosted project, paste it into the Supabase SQL Editor).
+3. Copy the project URL and a server-only Secret key into `.env` as `SUPABASE_URL` and `SUPABASE_SECRET_KEY`. A legacy `service_role` key can be supplied as `SUPABASE_SERVICE_ROLE_KEY` instead. Never commit `.env` or put this key in browser-side test code.
+4. Run `npm.cmd run cy:run:db`.
+
+The database suite changes data only in its dedicated test table and removes the generated row after each CRUD check.
 
 ## Layout
 

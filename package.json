@@ -7,6 +7,7 @@
     "cy:run": "cypress run",
     "cy:run:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
     "cy:run:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
+    "cy:run:db": "cypress run --spec 'cypress/e2e/db/**/*.cy.ts'",
     "cypress": "cypress open"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@supabase/supabase-js": "^2.119.0",
     "@types/node": "^26.6.6",
     "cypress": "^16.3.0",
     "cypress-xpath": "^2.0.1",
