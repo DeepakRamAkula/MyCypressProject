@@ -1,0 +1,22 @@
+{
+  "name": "mycypressproject",
+  "version": "1.0.0",
+  "description": "Cypress and TypeScript UI/API test automation starter for the DemoBlaze retail demo.",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
+    "cy:run:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
+    "cypress": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "cypress": "^16.3.0",
+    "cypress-xpath": "^2.0.1",
+    "typescript": "^7.0.2"
+  }
+}
