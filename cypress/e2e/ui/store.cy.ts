@@ -5,10 +5,10 @@ describe('DemoBlaze retail demo', () => {
   beforeEach(() => storeActions.visit());
 
   it('Login to the storefront', () => {
-    cy.xpath(storeElements.login).click();
-    cy.xpath(storeElements.userName,{timeout:2000}).type('DeepakAkula');
-    cy.xpath(storeElements.password,{timeout:2000}).type('Twinkle@0406');
-    cy.xpath(storeElements.loginButton,{timeout:2000}).click();
+    cy.xpath(storeElements.login,{timeout:2000}).click();
+    cy.xpath(storeElements.userName,{timeout:3000}).type('DeepakAkula');
+    cy.xpath(storeElements.password,{timeout:3000}).type('Twinkle@0406');
+    cy.xpath(storeElements.loginButton,{timeout:3000}).click();
     cy.xpath(storeElements.nameOfUser,{timeout:3000}).should('be.visible').and('contain.text', 'Welcome DeepakAkula');
   });
 
@@ -26,6 +26,10 @@ describe('DemoBlaze retail demo', () => {
 
   it('shows products after selecting the Laptops category', () => {
     storeActions.selectCategory('Laptops');
+    cy.xpath(storeElements.productCards).should('have.length.greaterThan', 0);
+  });
+  it('shows products after selecting the Monitors category', () => {
+    storeActions.selectCategory('Monitors');
     cy.xpath(storeElements.productCards).should('have.length.greaterThan', 0);
   });
 });
